@@ -17,6 +17,10 @@ public abstract class Shape {
   public abstract void move(int deltaX, int deltaY); // move the Shape
   public abstract Point getCenter(); // return the Shape's center
   
+  public Shape(){
+
+  }
+
   /**
    * Create a Shape, setting its color. 
    * 

@@ -21,7 +21,7 @@ public class ExchangeCmd extends Command {
    * @param p the coordinates of the click
    * @param dwg the drawing being clicked
    */
-  public void executeClick(Point p, Drawing dwg) {
+  public void executeClick(Point p, drawing dwg) {
     // Find the frontmost shape containing p.
     Shape s = dwg.getFrontmostContainer(p);
     

@@ -10,14 +10,25 @@ import java.awt.*;
  * @see Shape
  */
 public class Segment extends Shape {
-  // YOU FILL IN INSTANCE VARIABLES AND METHODS.
+
+  private int y1, x1;
+  private int x2, y2;
+  private Color color;
+
+  public Segment (int x1, int y1, int x2, int y2, Color color){
+    super(color);
+    this.x1 = x1;
+    this.y1 = y1;
+    this.x2 = x2;
+    this.y2 = y2;
+  }
 
   // Helper method that returns true if Point p is within a tolerance of a
   // given bounding box. Here, the bounding box is given by the coordinates of
-  // its left, top, right, and bottom.
-  private static boolean almostContainsPoint(Point p, int left, int top,
+  // its x1, y1, right, and bottom.
+  private static boolean almostContainsPoint(Point p, int x1, int y1,
       int right, int bottom, double tolerance) {
-    return p.x >= left - tolerance && p.y >= top - tolerance
+    return p.x >= x1 - tolerance && p.y >= y1 - tolerance
         && p.x <= right + tolerance && p.y <= bottom + tolerance;
   }
 
@@ -49,5 +60,35 @@ public class Segment extends Shape {
       // Return the distance between Point p and (x, y).
       return Math.sqrt(Math.pow(p.x - x, 2) + Math.pow(p.y - y, 2));
     }
+  }
+
+  public Point getCenter() {
+    return new Point(((x1 + x2) / 2), ((y1 + y2) / 2));
+  }
+
+  public void move(int deltaX, int deltaY){
+    x1 += deltaX;
+    y1 += deltaY;
+  }
+
+  public void drawShape(Graphics page){
+    page.drawLine(x1, y1, x2, y2);
+  }
+
+  public boolean containsPoint(Point p){
+    return true;
+  }
+
+  public void setTop(int val){
+    y1 = val;
+  }
+  public void setLeft(int val){
+    x1 = val;
+  }
+  public void setWidth(int val){
+    x2 = val;
+  }
+  public void setHeight(int val){
+    y2 = val;
   }
 }

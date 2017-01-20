@@ -10,7 +10,7 @@ import java.awt.*;
  * @author Thomas H. Cormen
  */
 public class Command {
-  public void executeClick(Point p, Drawing dwg) { }
-  public void executePress(Point p, Drawing dwg) { }
-  public void executeDrag(Point p, Drawing dwg) { }
+  public void executeClick(Point p, drawing dwg) { }
+  public void executePress(Point p, drawing dwg) { }
+  public void executeDrag(Point p, drawing dwg) { }
 }

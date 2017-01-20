@@ -12,6 +12,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class Editor extends JApplet {
   private static final long serialVersionUID = 1L;
@@ -20,7 +21,7 @@ public class Editor extends JApplet {
   private final Color initialColor = Color.red; // default color starts as red
 
   private Command cmd; // the command being executed
-  private Drawing dwg; // the drawing: shapes in order
+  private drawing dwg; // the drawing: shapes in order
   private ColorIndicator colorBox; // a GUI component to show the current default color
 
   /**
@@ -28,7 +29,7 @@ public class Editor extends JApplet {
    */
   public void init() {
     cmd = new Command(); // all methods in Command are empty
-    dwg = new Drawing(initialColor); // make an empty drawing
+    dwg = new drawing(initialColor); // make an empty drawing
 
     // The drawing will appear in a white CanvasPanel.
     CanvasPanel canvasPanel = new CanvasPanel();
@@ -134,7 +135,7 @@ public class Editor extends JApplet {
    */
   private class RectButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
-      // YOU FILL THIS IN.
+      cmd = new RectCmd();
       repaint();
     }
   }
@@ -144,7 +145,7 @@ public class Editor extends JApplet {
    */
   private class EllipseButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
-      // YOU FILL THIS IN.
+      cmd = new EllipseCmd();
       repaint();
     }
   }
@@ -154,7 +155,7 @@ public class Editor extends JApplet {
    */
   private class LineButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
-      // YOU FILL THIS IN.
+      cmd = new SegmentCmd();
       repaint();
     }
   }
@@ -214,7 +215,8 @@ public class Editor extends JApplet {
    */
   private class RedButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
-      // YOU FILL THIS IN.
+      dwg.setColor(Color.red);
+      colorBox.show(Color.red);
       repaint();
     }
   }
@@ -224,7 +226,8 @@ public class Editor extends JApplet {
    */
   private class GreenButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
-      // YOU FILL THIS IN.
+      dwg.setColor(Color.green);
+      colorBox.show(Color.green);
       repaint();
     }
   }
@@ -234,7 +237,8 @@ public class Editor extends JApplet {
    */
   private class BlueButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
-      // YOU FILL THIS IN.
+      dwg.setColor(Color.blue);
+      colorBox.show(Color.blue);
       repaint();
     }
   }
