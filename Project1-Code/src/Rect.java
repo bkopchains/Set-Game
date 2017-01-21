@@ -25,16 +25,18 @@ public class Rect extends Shape {
     }
 
     public void move(int deltaX, int deltaY){
-        left += deltaX;
-        top += deltaY;
+        left = deltaX;
+        top = deltaY;
     }
 
     public boolean containsPoint(Point p) {
-        return true; // change this
+        return pointInRect(p, left, top, width, height);
     }
 
     private boolean pointInRect(Point p, int left, int top, int width, int height){
-        return true; // change this
+        double pX = p.x;
+        double pY = p.y;
+        return ((pX > left && pX < (left + width)) && (pY > top && pY < (top + height)));
     }
 
     public void setTop(int val){

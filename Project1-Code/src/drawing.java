@@ -2,6 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class drawing {
 
@@ -14,7 +15,34 @@ public class drawing {
     }
 
     public Shape getFrontmostContainer(Point p){
-        return null;
+        Shape output = null;
+        for (Shape shape : shapeList){
+            if (shape.containsPoint(p)){
+                output = shape;
+            }
+        }
+        return output;
+    }
+
+    public void deleteShape(Shape shape){
+        int index = shapeList.indexOf(shape);
+        if (index >= 0) {
+            shapeList.remove(index);
+        }
+    }
+
+    public void layerUp(Shape shape){
+        int index = shapeList.indexOf(shape);
+        if (index < shapeList.size()-1) {
+            Collections.swap(shapeList, index, index+1);
+        }
+    }
+
+    public void layerDown(Shape shape){
+        int index = shapeList.indexOf(shape);
+        if (index > 0) {
+            Collections.swap(shapeList, index, index-1);
+        }
     }
 
     public void draw(Graphics graphics){

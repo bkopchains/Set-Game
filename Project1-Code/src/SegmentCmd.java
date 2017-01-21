@@ -17,9 +17,18 @@ public class SegmentCmd extends Command {
     }
 
     public void executeDrag(Point mousePoint, drawing dwg) {
-        currentSegment.setLeft(pressed.x);
-        currentSegment.setTop(pressed.y);
-        currentSegment.setWidth(mousePoint.x);
-        currentSegment.setHeight(mousePoint.y);
+
+        if (pressed.x < mousePoint.x){
+            currentSegment.setLeft(pressed.x);
+            currentSegment.setTop(pressed.y);
+            currentSegment.setWidth(mousePoint.x);
+            currentSegment.setHeight(mousePoint.y);
+        }
+        else {
+            currentSegment.setLeft(mousePoint.x);
+            currentSegment.setTop(mousePoint.y);
+            currentSegment.setWidth(pressed.x);
+            currentSegment.setHeight(pressed.y);
+        }
     }
 }

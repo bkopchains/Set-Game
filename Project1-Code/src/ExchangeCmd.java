@@ -10,7 +10,8 @@ import java.awt.*;
  */
 public class ExchangeCmd extends Command {
   private Shape firstShape; // the first Shape clicked
-  
+
+  public ExchangeCmd(){}
   /**
    * When the mouse is clicked, find the frontmost Shape in the drawing
    * that contains the mouse position. If there is such a Shape, then

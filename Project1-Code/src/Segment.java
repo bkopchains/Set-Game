@@ -67,8 +67,10 @@ public class Segment extends Shape {
   }
 
   public void move(int deltaX, int deltaY){
-    x1 += deltaX;
-    y1 += deltaY;
+    x2 = deltaX + (x2-x1);
+    x1 = deltaX;
+    y2 = deltaY + (y2-y1);
+    y1 = deltaY;
   }
 
   public void drawShape(Graphics page){
@@ -76,7 +78,7 @@ public class Segment extends Shape {
   }
 
   public boolean containsPoint(Point p){
-    return true;
+    return ((almostContainsPoint(p, x1, y1, x2, y2, 3)) || (distanceToPoint(p, x1, y1, x2, y2) <= 3));
   }
 
   public void setTop(int val){
