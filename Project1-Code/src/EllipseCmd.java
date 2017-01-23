@@ -3,6 +3,8 @@ import java.awt.event.*;
 import javax.swing.*;
 /**
  * Created by Ben_Kopchains on 1/20/17.
+ *
+ * a command class to handle events upon the "ellipse" button press
  */
 public class EllipseCmd extends Command {
 

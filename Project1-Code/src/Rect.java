@@ -2,6 +2,10 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+/**
+ * Rectangle class - handles creation and movement of new rectangle shapes
+ */
+
 public class Rect extends Shape {
 
     private int left, top;
@@ -39,6 +43,13 @@ public class Rect extends Shape {
         double pY = p.y;
         return ((pX > left && pX < (left + width)) && (pY > top && pY < (top + height)));
     }
+
+    /**
+     * For all methods below:
+     *
+     * setter methods for the top, left, width, and height values (respectively)
+     * @param val the new value of the variable
+     */
 
     public void setTop(int val){
         top = val;

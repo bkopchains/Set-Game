@@ -2,6 +2,8 @@ import java.awt.*;
 
 /**
  * Created by Ben_Kopchains on 1/20/17.
+ *
+ * a command class to handle events upon the "Rectangle" button press
  */
 public class RectCmd extends Command {
 

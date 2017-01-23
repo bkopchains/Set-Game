@@ -4,6 +4,8 @@ import javax.swing.*;
 
 /**
  * Created by Ben_Kopchains on 1/20/17.
+ *
+ * a command class to handle events upon the "red" button press
  */
 public class RedCmd extends Command {
 

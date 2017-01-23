@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 /**
  * Created by Ben_Kopchains on 1/21/17.
+ *
+ * a command class to handle events upon the "front" button press
  */
 public class FrontCmd extends Command{
 
