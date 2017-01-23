@@ -25,8 +25,9 @@ public class Rect extends Shape {
     }
 
     public void move(int deltaX, int deltaY){
-        left = deltaX;
-        top = deltaY;
+        left += deltaX;
+        top += deltaY;
+
     }
 
     public boolean containsPoint(Point p) {

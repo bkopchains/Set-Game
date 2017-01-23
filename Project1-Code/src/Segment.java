@@ -15,6 +15,7 @@ public class Segment extends Shape {
   private int x2, y2;
   private Color color;
 
+
   public Segment (int x1, int y1, int x2, int y2, Color color){
     super(color);
     this.x1 = x1;
@@ -67,10 +68,10 @@ public class Segment extends Shape {
   }
 
   public void move(int deltaX, int deltaY){
-    x2 = deltaX + (x2-x1);
-    x1 = deltaX;
-    y2 = deltaY + (y2-y1);
-    y1 = deltaY;
+    x1 += deltaX;
+    x2 += deltaX;
+    y1 += deltaY;
+    y2 += deltaY;
   }
 
   public void drawShape(Graphics page){

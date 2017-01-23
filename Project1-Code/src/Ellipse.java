@@ -71,8 +71,8 @@ public class Ellipse extends Shape {
    * @param deltaY new y coordinate
    */
   public void move(int deltaX, int deltaY) {
-    left = deltaX;
-    top = deltaY;
+    left += deltaX;
+    top += deltaY;
   }
 
   /**
