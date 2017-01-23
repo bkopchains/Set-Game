@@ -10,6 +10,7 @@ public class BlueCmd extends Command {
     public BlueCmd(){}
 
     public void executeClick(Point p, drawing dwg) {
+        if (dwg.getFrontmostContainer(p) != null)
         dwg.getFrontmostContainer(p).setColor(Color.blue);
     }
 

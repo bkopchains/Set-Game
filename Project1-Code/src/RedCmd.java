@@ -10,6 +10,7 @@ public class RedCmd extends Command {
     public RedCmd(){}
 
     public void executeClick(Point p, drawing dwg) {
+        if (dwg.getFrontmostContainer(p) != null)
         dwg.getFrontmostContainer(p).setColor(Color.red);
     }
 
